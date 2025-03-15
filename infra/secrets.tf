@@ -3,7 +3,7 @@ variable "db_credentials" {
   default = {
     username = "postgres"
     password = "postgrespass"
-    db_name  = "techchallenge-fastfood"
+    db_name  = "techchallengefastfood"
   }
 }
 
