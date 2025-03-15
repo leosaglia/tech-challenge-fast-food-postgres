@@ -19,6 +19,8 @@ data "aws_subnets" "private_subnets" {
   depends_on = [data.aws_vpc.selected_vpc]
 }
 
-data "aws_iam_role" "lab_role" {
-  name = "LabRole"
+data "aws_secretsmanager_secret_version" "db_credentials_secret_version" {
+  secret_id = aws_secretsmanager_secret.db_credentials_secret.id
+
+  depends_on = [aws_secretsmanager_secret_version.db_credentials_secret_version]
 }
