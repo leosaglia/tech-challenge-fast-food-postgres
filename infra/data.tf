@@ -19,6 +19,10 @@ data "aws_subnets" "private_subnets" {
   depends_on = [data.aws_vpc.selected_vpc]
 }
 
+data "aws_security_group" "sg_rds" {
+  name = "tech-challenge-rds-sg"
+}
+
 data "aws_secretsmanager_secret_version" "db_credentials_secret_version" {
   secret_id = aws_secretsmanager_secret.db_credentials_secret.id
 
